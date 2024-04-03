@@ -13,14 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -81,15 +74,20 @@ export function DesktopNavigationMenu() {
         <NavigationMenuItem>
           <Link href="/products" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <DropdownMenu>
-                <DropdownMenuTrigger>Products</DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem>Fabrics</DropdownMenuItem>
-                  <DropdownMenuItem>Patterns</DropdownMenuItem>
-                  <DropdownMenuItem>Notions</DropdownMenuItem>
-                  <DropdownMenuItem>Trims & Ribbons</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                  {components.map((component) => (
+                    <ListItem
+                      key={component.title}
+                      title={component.title}
+                      href={component.href}
+                    >
+                      {component.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
