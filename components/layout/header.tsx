@@ -13,20 +13,26 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { DesktopNavigationMenu } from "./headerDesktopNav";
 import { LeafIcon, ShoppingCart, SquareUserRound } from "lucide-react";
 import { ModeToggle } from "../ui/mode-toggle";
 import { currentUser } from "@/server/api-auth";
 import Image from "next/image";
 import logo from "@/assets/csssk.png";
 import { ComboboxDemo } from "../common/popover-command";
+import DesktopNavigationMenu from "./headerDesktopNav";
 
 const Header = async () => (
   <div className="border-b z-[500] bg-background">
     <div className="flex h-16 items-center w-full md:px-6 px-2">
       <Link href="/">
         <div className="w-20">
-          <Image src={logo} alt="logo" width={500} height={400} className="w-full h-full object-contain" />
+          <Image
+            src={logo}
+            alt="logo"
+            width={500}
+            height={400}
+            className="w-full h-full object-contain"
+          />
         </div>
       </Link>
       <div className="w-full hidden md:block pl-20 justify-center items-center flex-row">

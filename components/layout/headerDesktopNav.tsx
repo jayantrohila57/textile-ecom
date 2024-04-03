@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import Link from "next/link";
 
@@ -167,7 +165,7 @@ const headerData: IHeaderData[] = [
   },
 ];
 
-export const DesktopNavigationMenu = async () => {
+const DesktopNavigationMenu = async () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -218,6 +216,8 @@ export const DesktopNavigationMenu = async () => {
     </NavigationMenu>
   );
 };
+
+export default DesktopNavigationMenu;
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
