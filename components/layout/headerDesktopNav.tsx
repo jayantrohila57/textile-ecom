@@ -13,102 +13,211 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { currentUser } from "@/server/api-auth";
 
+interface ICategory {
+  title: string;
+  link: string;
+  description: string;
+}
+interface ICategories {
+  title: string;
+  link: string;
+  categories: ICategory[];
+}
+interface IHeaderData {
+  title: string;
+  category: ICategories[];
+}
 
-const components: { title: string; href: string; description: string }[] = [
+const headerData: IHeaderData[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    title: "Readymade",
+    category: [
+      {
+        title: "Topwear",
+        link: "/topwear",
+        categories: [
+          {
+            title: "T-Shirts",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Casual Shirts",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Formal Shirts",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Sweatshirts",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Sweaters",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Jackets",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Blazers & Coats",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+        ],
+      },
+      {
+        title: "Bottomwear",
+        link: "/bottomwear",
+        categories: [
+          {
+            title: "Jeans",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Casual Trousers",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Formal Trousers",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Shorts",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Track Pants & Joggers",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+        ],
+      },
+    ],
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    title: "Textiles",
+    category: [
+      {
+        title: "Topwear",
+        link: "/topwear",
+        categories: [
+          {
+            title: "Tabs1",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Tabs2",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Tabs3",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Tabs4",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+        ],
+      },
+      {
+        title: "Bottomwear",
+        link: "/bottomwear",
+        categories: [
+          {
+            title: "Tabs1",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Tabs2",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Tabs3",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+          {
+            title: "Tabs4",
+            link: "/docs/primitives/tabs",
+            description: "A set of layered sections of content—known as tab.",
+          },
+        ],
+      },
+    ],
   },
 ];
 
-export function DesktopNavigationMenu() {
+export const DesktopNavigationMenu = async () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Home
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/about" legacyBehavior passHref>
+        {headerData.map((header) => (
+          <NavigationMenuItem key={header.title}>
+            <Link href={header.category[0].link} passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <NavigationMenuTrigger>{header.title}</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    {header.category.map((category) => (
+                      <h2 key={category.title}>{category.title}</h2>
+                    ))}
+                    {header.category.map((category) =>
+                      category.categories.map((subcategory) => (
+                        <ListItem
+                          key={subcategory.title}
+                          title={subcategory.title}
+                          href={subcategory.link}
+                        >
+                          {subcategory.description}
+                        </ListItem>
+                      ))
+                    )}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        ))}
+        <NavigationMenuItem className="cursor-pointer">
+          <Link href="/about" passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About Us
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/products" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {components.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/blog" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Blog
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/contact" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact Us
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
+        {(await currentUser()) && (
+          <NavigationMenuItem className="cursor-pointer">
+            <Link href="/contact" passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Contact Us
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        )}
       </NavigationMenuList>
     </NavigationMenu>
   );
-}
+};
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,

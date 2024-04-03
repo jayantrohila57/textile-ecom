@@ -19,6 +19,7 @@ import { ModeToggle } from "../ui/mode-toggle";
 import { currentUser } from "@/server/api-auth";
 import Image from "next/image";
 import logo from "@/assets/csssk.png";
+import { ComboboxDemo } from "../common/popover-command";
 
 const Header = async () => (
   <div className="border-b z-[500] bg-background">
@@ -32,7 +33,7 @@ const Header = async () => (
         <DesktopNavigationMenu />
       </div>
       <div className="ml-auto flex items-center space-x-4">
-        <Search />
+        <ComboboxDemo />
         <ModeToggle />
         {(await currentUser()) ? (
           <>
