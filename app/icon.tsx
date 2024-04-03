@@ -15,7 +15,7 @@ const Icon = () =>
           width: "40",
           padding: "2",
           height: "40",
-          fontSize: "22",
+          fontSize: "16",
           fontWeight: "400",
           color: "white",
           backgroundColor: "black",

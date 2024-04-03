@@ -9,7 +9,7 @@ const links = {
 };
 
 export const siteConfig = {
-  name: "CSK",
+  name: "CSK | Textile Fabrics E-commerce",
   description: "Textiles fabric cloths",
   url: "https://example.com",
   ogImage: "https://example.com/opengraph-image.png",
