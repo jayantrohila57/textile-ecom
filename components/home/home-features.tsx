@@ -2,7 +2,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 function HomeFeatures() {
   return (
-    <div className="mx-auto max-w-screen-2xl px-4 md:px-16  grid md:grid-cols-4 gap-5 md:py-20 py-10  text-center">
+    <div className="grid md:grid-cols-4 gap-5 md:py-20 py-10 md:px-6 px-2  text-center">
       <Card className="shadow-xl hover:-translate-y-4 duration-300 transition-all cursor-pointer">
         <CardHeader
           className="p-4 gap-6"

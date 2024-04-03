@@ -19,7 +19,7 @@ import { currentUser } from "@/server/api-auth";
 import Image from "next/image";
 import logo from "@/assets/csssk.png";
 import { ComboboxDemo } from "../common/popover-command";
-import DesktopNavigationMenu from "./headerDesktopNav";
+import { DesktopNavigationMenu } from "./headerDesktopNav";
 
 const Header = async () => (
   <div className="border-b z-[500] bg-background">

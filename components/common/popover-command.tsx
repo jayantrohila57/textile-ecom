@@ -16,7 +16,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { ArrowDownUp, CheckIcon } from "lucide-react";
+import { ArrowDownUp, CheckIcon, ChevronDown, ChevronUp } from "lucide-react";
 
 const frameworks = [
   {
@@ -56,14 +56,18 @@ export function ComboboxDemo() {
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
-          <ArrowDownUp className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            : "Select items..."}
+          {open ? (
+            <ChevronUp className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          ) : (
+            <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          )}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search framework..." className="h-9" />
-          <CommandEmpty>No framework found.</CommandEmpty>
+          <CommandInput placeholder="Search item..." className="h-9" />
+          <CommandEmpty>No item found.</CommandEmpty>
           <CommandGroup>
             {frameworks.map((framework) => (
               <CommandItem

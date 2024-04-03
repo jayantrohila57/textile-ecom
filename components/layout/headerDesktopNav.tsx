@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import Link from "next/link";
 
@@ -30,7 +32,7 @@ interface IHeaderData {
 
 const headerData: IHeaderData[] = [
   {
-    title: "Readymade",
+    title: "Men Fashion",
     category: [
       {
         title: "Topwear",
@@ -165,59 +167,48 @@ const headerData: IHeaderData[] = [
   },
 ];
 
-const DesktopNavigationMenu = async () => {
+export function DesktopNavigationMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         {headerData.map((header) => (
           <NavigationMenuItem key={header.title}>
-            <Link href={header.category[0].link} passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                <NavigationMenuTrigger>{header.title}</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {header.category.map((category) => (
-                      <h2 key={category.title}>{category.title}</h2>
-                    ))}
-                    {header.category.map((category) =>
-                      category.categories.map((subcategory) => (
-                        <ListItem
-                          key={subcategory.title}
-                          title={subcategory.title}
-                          href={subcategory.link}
-                        >
-                          {subcategory.description}
-                        </ListItem>
-                      ))
-                    )}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuLink>
-            </Link>
+            {/* <Link href={header.category[0].link} passHref> */}
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuTrigger>{header.title}</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  {header.category.map((category) => (
+                    <h2 key={category.title}>{category.title}</h2>
+                  ))}
+                  {header.category.map((category) =>
+                    category.categories.map((subcategory) => (
+                      <ListItem
+                        key={subcategory.title}
+                        title={subcategory.title}
+                        href={subcategory.link}
+                      >
+                        {subcategory.description}
+                      </ListItem>
+                    ))
+                  )}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuLink>
+            {/* </Link> */}
           </NavigationMenuItem>
         ))}
-        <NavigationMenuItem className="cursor-pointer">
+        <NavigationMenuItem>
           <Link href="/about" passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About Us
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        {(await currentUser()) && (
-          <NavigationMenuItem className="cursor-pointer">
-            <Link href="/contact" passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Contact Us
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        )}
       </NavigationMenuList>
     </NavigationMenu>
   );
-};
-
-export default DesktopNavigationMenu;
+}
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,

@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="h-screen relative  w-full ">
       <Image
-        src="https://images.unsplash.com/photo-1503160865267-af4660ce7bf2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://plus.unsplash.com/premium_photo-1689629728966-0d248b5aeda2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         fill
         alt="hero image"
         className="absolute inset-0 h-full w-full object-cover object-center"
