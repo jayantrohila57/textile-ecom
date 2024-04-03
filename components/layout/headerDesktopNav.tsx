@@ -40,37 +40,37 @@ const headerData: IHeaderData[] = [
         categories: [
           {
             title: "T-Shirts",
-            link: "/docs/primitives/tabs",
+            link: "/topwear/t-shirt",
             description: "A set of layered sections of content—known as tab.",
           },
           {
             title: "Casual Shirts",
-            link: "/docs/primitives/tabs",
+            link: "/topwear/casual-shirts",
             description: "A set of layered sections of content—known as tab.",
           },
           {
             title: "Formal Shirts",
-            link: "/docs/primitives/tabs",
+            link: "/topwear/formal-shirts",
             description: "A set of layered sections of content—known as tab.",
           },
           {
             title: "Sweatshirts",
-            link: "/docs/primitives/tabs",
+            link: "/topwear/sweatshirts",
             description: "A set of layered sections of content—known as tab.",
           },
           {
             title: "Sweaters",
-            link: "/docs/primitives/tabs",
+            link: "/topwear/sweaters",
             description: "A set of layered sections of content—known as tab.",
           },
           {
             title: "Jackets",
-            link: "/docs/primitives/tabs",
+            link: "/topwear/jackets",
             description: "A set of layered sections of content—known as tab.",
           },
           {
             title: "Blazers & Coats",
-            link: "/docs/primitives/tabs",
+            link: "/topwear/blazers-coats",
             description: "A set of layered sections of content—known as tab.",
           },
         ],
@@ -81,27 +81,27 @@ const headerData: IHeaderData[] = [
         categories: [
           {
             title: "Jeans",
-            link: "/docs/primitives/tabs",
+            link: "/bottomwear/jeans",
             description: "A set of layered sections of content—known as tab.",
           },
           {
             title: "Casual Trousers",
-            link: "/docs/primitives/tabs",
+            link: "/bottomwear/casual-trousers",
             description: "A set of layered sections of content—known as tab.",
           },
           {
             title: "Formal Trousers",
-            link: "/docs/primitives/tabs",
+            link: "/bottomwear/formal-trousers",
             description: "A set of layered sections of content—known as tab.",
           },
           {
             title: "Shorts",
-            link: "/docs/primitives/tabs",
+            link: "/bottomwear/shorts",
             description: "A set of layered sections of content—known as tab.",
           },
           {
             title: "Track Pants & Joggers",
-            link: "/docs/primitives/tabs",
+            link: "/bottomwear/track-pent-joggers",
             description: "A set of layered sections of content—known as tab.",
           },
         ],
@@ -198,13 +198,13 @@ export function DesktopNavigationMenu() {
             {/* </Link> */}
           </NavigationMenuItem>
         ))}
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <Link href="/about" passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About Us
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   );

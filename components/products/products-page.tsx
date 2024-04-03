@@ -31,7 +31,7 @@ function ProductPage({ data }: { data: IProduct[] }) {
 
   const currentPageNumber = Math.floor(start / (end - start)) + 1;
   return (
-    <section className="p-5 sm:p-14 lg:p-20 lg:py-10 w-full ">
+    <section className="px-3  md:px-6 w-full ">
       <div className=" pb-10 text-center flex flex-col justify-center items-center">
         <p className="mb-4 text-left font-light text-lg text-primary sm:text-xl flex flex-row">
           Our Products {"->"}
@@ -40,7 +40,8 @@ function ProductPage({ data }: { data: IProduct[] }) {
           Product Catalogue
         </h2>
         <p className=" max-w-3xl mx-auto drop-shadow-lg font-light text-sm md:text-xl">
-          This is our latest products of Textile fabrics and it is safe and comfortable.
+          This is our latest products of Textile fabrics and it is safe and
+          comfortable.
         </p>
       </div>
       <div className="grid grid-cols-4 gap-5 py-5">

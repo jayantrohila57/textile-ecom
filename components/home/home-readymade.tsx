@@ -97,7 +97,12 @@ function HomeReadymade() {
       <div className="w-full">
         <div className="grid gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
           {data.map(({ id, image, name, price }, index) => (
-            <Card className="rounded-xl" key={index + id}>
+            <Card
+              className="rounded-xl"
+              key={index + id}
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
               <CardHeader className="p-0">
                 <Link
                   href="#"

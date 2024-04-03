@@ -10,10 +10,16 @@ const Hero = () => {
         fill
         alt="hero image"
         className="absolute inset-0 h-full w-full object-cover object-center"
+        data-aos="fade-left"
+        data-aos-duration="1000"
       />
 
       <div className="relative flex flex-col items-start justify-center  w-full h-full bg-gradient-to-r from-black/80 via-black/20 to-transparent ">
-        <div className=" p-5 sm:p-14 md:p-20 max-w-3xl flex justify-start items-start text-left flex-col">
+        <div
+          className=" p-5 sm:p-14 md:p-20 max-w-3xl flex justify-start items-start text-left flex-col"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <p className="mb-4 text-left font-light text-xl text-white sm:text-xl md:text-2xl md:mb-8">
             Welcome to CSK {"->"}
           </p>
