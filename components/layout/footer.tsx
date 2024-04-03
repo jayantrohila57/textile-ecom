@@ -4,7 +4,7 @@ import logo from "@/assets/csssk.png";
 
 export default function FooterLayout() {
   return (
-    <footer className=" md:p-20 sm:p-14 p-5">
+    <footer className="px2 md:px-6 py-10 md:py-16 md:mt-10 mt-5 border-t-2">
       <div className="mx-auto w-full ">
         <div className="mb-16 grid grid-cols-2 gap-12 md:grid-cols-4 lg:grid-cols-6 lg:gap-8">
           <div className="col-span-full lg:col-span-2">
