@@ -6,7 +6,7 @@ function HomeAction() {
   return (
     <div className="relative w-full mx-auto flex flex-col items-center justify-center py-20 gap-5 px-3 md:px-10 mt-10 bg-gradient-to-r from-black/80 via-black/20 to-transparent">
       <Image
-        src="https://plus.unsplash.com/premium_photo-1661457911875-118df315d6fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://img.freepik.com/premium-photo/young-handsome-businessman-traditional-clothes-shop_449849-19742.jpg?w=1060"
         alt="main image"
         width={1000}
         height={1000}
