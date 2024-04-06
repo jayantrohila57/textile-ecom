@@ -31,7 +31,7 @@ function TextileVideo() {
         <CardHeader className="w-full flex items-center justify-center p-0">
           <video
             src={video.src}
-            controls
+            
             autoPlay={true}
             className="w-full  rounded  object-cover"
             data-aos="fade-right"

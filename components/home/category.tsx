@@ -57,80 +57,25 @@ function Category() {
         </p>
       </div>
 
-      <div className="w-full grid md:grid-cols-9 grid-cols-1 grid-rows-1 md:grid-rows-3 border">
-        {collections && (
-          <Link href={collections[0].link}  className="w-full md:col-span-3 col-span-1 bg-red-500">
-            <div>
-              <Image
-                src={collections[0].src}
-                alt={collections[0].alt}
-                width={500}
-                height={400}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </Link>
-        )}
-        {collections && (
-          <Link href={collections[1].link} className="w-full md:col-span-3">
-            <div className="">
-              <Image
-                src={collections[1].src}
-                alt={collections[1].alt}
-                width={500}
-                height={400}
-              />
-            </div>
-          </Link>
-        )}
-        {collections && (
-          <Link href={collections[2].link} className="w-full md:col-span-3">
-            <div className="">
-              <Image
-                src={collections[2].src}
-                alt={collections[2].alt}
-                width={500}
-                height={400}
-              />
-            </div>
-          </Link>
-        )}
-        {collections && (
-          <Link href={collections[3].link} className="w-full md:col-span-3">
-            <div className="">
-              <Image
-                src={collections[3].src}
-                alt={collections[3].alt}
-                width={500}
-                height={400}
-              />
-            </div>
-          </Link>
-        )}
-        {collections && (
-          <Link href={collections[4].link} className="w-full md:col-span-3">
-            <div className="">
-              <Image
-                src={collections[4].src}
-                alt={collections[4].alt}
-                width={500}
-                height={400}
-              />
-            </div>
-          </Link>
-        )}
-        {collections && (
-          <Link href={collections[5].link} className="w-full md:col-span-3">
-            <div className="">
-              <Image
-                src={collections[5].src}
-                alt={collections[5].alt}
-                width={500}
-                height={400}
-              />
-            </div>
-          </Link>
-        )}
+      <div className="grid h-[80vh] w-full grid-cols-12 grid-row-12 gap-2 p-2">
+        <div className="col-span-4 row-span-4 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
+          1
+        </div>
+        <div className="col-span-4 row-span-8 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
+          2
+        </div>
+        <div className="col-span-4 row-span-4 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
+          3
+        </div>
+        <div className="col-span-4 row-span-8 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
+          4
+        </div>
+        <div className="col-span-4 row-span-8 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
+          5
+        </div>
+        <div className="col-span-4 flex row-span-4 h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
+          6
+        </div>
       </div>
     </div>
   );
