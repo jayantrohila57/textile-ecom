@@ -90,7 +90,7 @@ function HomeTextile() {
 
               <LikeDislike />
 
-              <CardFooter className="w-full flex flex-col items-center justify-between p-0 pb-1">
+              <CardFooter className="w-full flex flex-col items-center justify-between p-0 pb-1 h-32">
                 <div className="w-full flex items-center justify-between p-1">
                   <div className="flex flex-col items-start justify-start">
                     <h3 className="font-bold text-gray-700  lg:text-lg">
