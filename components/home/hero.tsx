@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="h-screen relative  w-full ">
       <Image
-        src="https://plus.unsplash.com/premium_photo-1689629728966-0d248b5aeda2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://img.freepik.com/free-photo/vibrant-fashion-textile-pattern-collection-display-generative-ai_188544-9090.jpg?w=1060"
         fill
         alt="hero image"
         className="absolute inset-0 h-full w-full object-cover object-center"
@@ -16,7 +16,7 @@ const Hero = () => {
 
       <div className="relative flex flex-col items-start justify-center  w-full h-full bg-gradient-to-r from-black/80 via-black/20 to-transparent ">
         <div
-          className=" p-5 sm:p-14 md:p-20 max-w-3xl flex justify-start items-start text-left flex-col"
+          className="p-5 sm:p-14 md:p-20 max-w-3xl flex justify-start items-start text-left flex-col"
           data-aos="fade-right"
           data-aos-duration="1000"
         >

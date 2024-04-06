@@ -2,90 +2,58 @@ import React from "react";
 import { Card, CardFooter, CardHeader } from "../ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import LikeDislike from "./likeDislike";
+import { Button } from "../ui/button";
 
 const data = [
   {
     id: 1,
-    name: "Trouser",
+    name: "Man Formal Fabric",
+    title: "Textile fabrics",
     image:
-      "https://images.unsplash.com/photo-1682369164315-6cc2e383f8f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://img.freepik.com/free-photo/man-cutter-sewing-factory-holding-fabric_1303-15848.jpg?w=900",
     price: "₹399",
+    rating: 4.3,
   },
   {
     id: 2,
-    name: "Trouser",
+    name: "Man Coat Fabric",
+    title: "Fashion designer taking measurement ",
     image:
-      "https://img.freepik.com/free-photo/realistic-scene-with-clothes-neighborhood-yard-sale_23-2151238287.jpg?w=360",
+      "https://img.freepik.com/free-photo/fashion-designer-taking-measurement-blue-fabric-with-measuring-tape-table_23-2148180320.jpg?w=740",
     price: "₹499",
+    rating: 4.3,
   },
   {
     id: 3,
-    name: "Trouser",
+    name: "Man Textile Fabric",
+    title: "A man sits in front of a pile of fabric.",
     image:
-      "https://img.freepik.com/free-photo/portrait-young-male-tailor-working-his-workshop_23-2148180377.jpg?w=360&t=st=1712147707~exp=1712148307~hmac=fb09fd722824f6cfec8cfb09e79b84d961b2fed88a2f1686fe672a52923d4707",
+      "https://img.freepik.com/premium-photo/man-sits-front-pile-fabric_664644-3529.jpg?w=900",
     price: "₹519",
+    rating: 4.3,
   },
   {
     id: 4,
-    name: "Trouser",
+    name: "Man Printed Textiles",
+    title: "Portrait of people at the market",
     image:
-      "https://img.freepik.com/free-photo/male-fashion-designer-holding-coat-with-his-customer-sitting-chair-shop_23-2148180341.jpg?w=360&t=st=1712147729~exp=1712148329~hmac=18fd4826788632583b0afc23e6a56e9f89c1525162db2d710e23473e444c57ba",
+      "https://img.freepik.com/free-photo/portrait-people-market_23-2151205693.jpg?w=1060",
     price: "₹529",
-  },
-  {
-    id: 5,
-    name: "Shirt",
-    image:
-      "https://img.freepik.com/free-photo/close-up-flannel-shirt-detail_23-2149575310.jpg?w=360&t=st=1712147745~exp=1712148345~hmac=2707c346f26d575ab65fdd9034d93efa1497eef5106a4af43e56647223b5b663",
-    price: "₹539",
-  },
-  {
-    id: 6,
-    name: "Shirt",
-    image:
-      "https://img.freepik.com/premium-photo/fabric-wallpaper-texture-background_830327-8227.jpg?w=900",
-    price: "₹549",
-  },
-  {
-    id: 7,
-    name: "Shirt",
-    image:
-      "https://img.freepik.com/premium-photo/cloth-hangers-with-shirts-closeup-photo-men-shirts-hangers_263512-5753.jpg?w=900",
-    price: "₹559",
-  },
-  {
-    id: 8,
-    name: "Shirt",
-    image:
-      "https://img.freepik.com/premium-photo/row-rolled-up-cloths-row_771335-57337.jpg?w=1380",
-    price: "₹569",
-  },
-  {
-    id: 9,
-    name: "Shirt",
-    image:
-      "https://img.freepik.com/premium-photo/jeans-fabric_926199-15632.jpg?w=360",
-    price: "₹579",
-  },
-  {
-    id: 10,
-    name: "Shirt",
-    image:
-      "https://img.freepik.com/premium-photo/stack-colorful-fabric_771335-57341.jpg?w=900",
-    price: "₹589",
+    rating: 4.3,
   },
 ];
 
 function HomeTextile() {
   return (
-    <div className="w-full flex flex-col justify-center items-center md:gap-14 gap-10 px-2 md:px-6 md:mt-10 mt-5">
+    <div className="w-full flex flex-col justify-center items-center md:gap-14 gap-10 px-2 md:px-20 md:mt-10 mt-5">
       <div className="w-full flex flex-col items-center justify-center gap-5">
         <h2
           className="md:text-4xl text-2xl  font-bold"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          --- Textile Fashion ---
+          Men Textile Fabrics
         </h2>
         <p
           className="text-center text-sm md:text-base"
@@ -97,17 +65,17 @@ function HomeTextile() {
       </div>
       <div className="w-full">
         <div className="grid gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
-          {data.map(({ id, image, name, price }, index) => (
+          {data.map(({ id, image, name, price, title, rating }, index) => (
             <Card
-              className="rounded-xl"
+              className="rounded-xl relative"
               key={index + id}
-              data-aos="zoom-out-right"
+              data-aos="fade-right"
               data-aos-duration="1000"
             >
-              <CardHeader className="p-0">
+              <CardHeader className="p-0 h-72">
                 <Link
                   href="#"
-                  className="group relative mb-2 block h-80 overflow-hidden rounded-xl bg-gray-100 lg:mb-3"
+                  className="group relative block h-72 overflow-hidden rounded-xl bg-gray-100"
                 >
                   <Image
                     src={image}
@@ -120,11 +88,29 @@ function HomeTextile() {
                 </Link>
               </CardHeader>
 
-              <CardFooter className="w-full flex items-center justify-between p-3">
-                <h3 className="font-bold  lg:text-lg">{name}</h3>
-                <span className="font-bold text-gray-500 lg:text-lg">
-                  {price}
-                </span>
+              <LikeDislike />
+
+              <CardFooter className="w-full flex flex-col items-center justify-between p-0 pb-1">
+                <div className="w-full flex items-center justify-between p-1">
+                  <div className="flex flex-col items-start justify-start">
+                    <h3 className="font-bold text-gray-700  lg:text-lg">
+                      {name}
+                    </h3>
+                    <p className="text-gray-700 text-sm">{title}</p>
+                  </div>
+                  <div className="flex flex-col items-end justify-end gap-1">
+                    <span className="font-bold text-gray-700 lg:text-lg">
+                      {price}
+                    </span>
+                    <span className="font-bold text-gray-700 text-sm">
+                      ⭐{rating}
+                    </span>
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-between p-1">
+                  <Button variant={"outline"}>Add to Cart</Button>
+                  <Button>But Now</Button>
+                </div>
               </CardFooter>
             </Card>
           ))}
