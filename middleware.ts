@@ -3,7 +3,7 @@ import NextAuth from "next-auth";
 import authConfig from "./auth.config";
 
 const RoutesFactory = {
-  publicRoutes: ["/", "/blog/*", "/products/*", "/auth/new-verification"],
+  publicRoutes: ["/", "/blog/*", "/products/*","/blog/*","/contact/*","/cart/*", "/auth/new-verification"],
   authRoutes: [
     "/auth/sign-up",
     "/auth/sign-in",
@@ -26,29 +26,29 @@ export default auth((req) => {
   const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 
-  if (isApiAuthRoute) {
-    return null;
-  }
+  // if (isApiAuthRoute) {
+  //   return null;
+  // }
 
-  if (isAuthRoute) {
-    if (isLoggedIn) {
-      return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
-    }
-    return null;
-  }
+  // if (isAuthRoute) {
+  //   if (isLoggedIn) {
+  //     return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
+  //   }
+  //   return null;
+  // }
 
-  if (!isLoggedIn && !isPublicRoute) {
-    let callbackUrl = nextUrl.pathname;
-    if (nextUrl.search) {
-      callbackUrl += nextUrl.search;
-    }
+  // if (!isLoggedIn && !isPublicRoute) {
+  //   let callbackUrl = nextUrl.pathname;
+  //   if (nextUrl.search) {
+  //     callbackUrl += nextUrl.search;
+  //   }
 
-    const encodedCallbackUrl = encodeURIComponent(callbackUrl);
+  //   const encodedCallbackUrl = encodeURIComponent(callbackUrl);
 
-    return Response.redirect(
-      new URL(`/auth/sign-in?callbackUrl=${encodedCallbackUrl}`, nextUrl)
-    );
-  }
+  //   return Response.redirect(
+  //     new URL(`/auth/sign-in?callbackUrl=${encodedCallbackUrl}`, nextUrl)
+  //   );
+  // }
 
   return null;
 });

@@ -49,7 +49,7 @@ function ProductPage({ data }: { data: IProduct[] }) {
           <ProductCard data={product} key={index} />
         ))}
       </div>
-      <div className="py-20">
+      {/* <div className="py-20">
         <Pagination>
           <PaginationContent>
             <PaginationItem>
@@ -66,7 +66,7 @@ function ProductPage({ data }: { data: IProduct[] }) {
             </PaginationItem>
           </PaginationContent>
         </Pagination>
-      </div>
+      </div> */}
     </section>
   );
 }
