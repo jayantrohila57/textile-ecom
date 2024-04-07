@@ -4,7 +4,7 @@ import { ArrowRightIcon } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="h-screen relative  w-full ">
+    <section className="h-screen relative  w-full overflow-hidden ">
       <Image
         src="https://img.freepik.com/free-photo/vibrant-fashion-textile-pattern-collection-display-generative-ai_188544-9090.jpg?w=1060"
         fill
