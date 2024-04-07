@@ -19,7 +19,7 @@ import { IProduct } from "@/types/interface";
 export function ProductCard({ data }: { data: IProduct }) {
   return (
     <Card className="group">
-      <Link aria-label={data?.productName} href={`/products/${data?.slug}`}>
+      <Link aria-label={data?.productName} href={`/textile/kurta/${data?.slug}`}>
         <CardHeader className="border-b p-0 overflow-hidden">
           <AspectRatio ratio={4 / 4} className="overflow-hidden">
             {data?.image?.length ? (

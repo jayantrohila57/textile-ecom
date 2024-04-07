@@ -1,4 +1,5 @@
 import { headerData } from "@/data";
+import Link from "next/link";
 import React from "react";
 
 const CategoryPage = ({ cat }: { cat: string }) => {
@@ -26,12 +27,13 @@ const CategoryPage = ({ cat }: { cat: string }) => {
           <div className="grid h-[80vh] w-full grid-cols-12 grid-row-12 gap-2 p-2">
             {/* Map through each category within the category group */}
             {categoryGroup.categories.map((category) => (
-              <div
-                key={category.title}
+              <Link
+                href={category.link}
                 className="col-span-4 row-span-4 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl"
+                key={category.title}
               >
-                {category.title}
-              </div>
+                <p>{category.title}</p>
+              </Link>
             ))}
           </div>
         </div>

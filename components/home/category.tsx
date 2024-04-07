@@ -1,9 +1,8 @@
-import { headerData } from "@/data";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
 import { MoveRight } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
 
 interface CollectionProps {
   href: string;
@@ -95,31 +94,21 @@ function Category() {
           Top New Collections With CSK Explore Now
         </p>
       </div>
-
-      <div className="grid h-[80vh] w-full grid-cols-12 grid-row-12 gap-2 p-2">
-        <div className="col-span-4 row-span-4 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
-          1
-        </div>
-        <div className="col-span-4 row-span-8 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
-          2
-        </div>
-        <div className="col-span-4 row-span-4 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
-          3
-        </div>
-        <div className="col-span-4 row-span-8 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
-          4
-        </div>
-        <div className="col-span-4 row-span-8 flex h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
-          5
-        </div>
-        <div className="col-span-4 flex row-span-4 h-full w-full items-center justify-center bg-gray-500 text-3xl font-bold text-white rounded-xl">
-          6
-        </div>
+      <div className="w-full grid  grid-cols-12 gap-5 h-[80vh] overflow-hidden">
+        {dummyData.map(({ alt, description, href, src, title, delay }) => (
+          <CollectionItem
+            key={href}
+            href={href}
+            src={src}
+            alt={alt}
+            title={title}
+            description={description}
+            delay={delay}
+          />
+        ))}
       </div>
     </div>
   );
 }
 
 export default Category;
-
- 
