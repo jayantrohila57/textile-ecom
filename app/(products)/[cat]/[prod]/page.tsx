@@ -1,4 +1,3 @@
-
 import ProductPage from "@/components/products/products-page";
 import { getAllProduct } from "@/server/api-sanity";
 
