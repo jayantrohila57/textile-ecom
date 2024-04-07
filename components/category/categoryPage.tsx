@@ -1,23 +1,12 @@
-import Retails from "../product/retailsProduct/retails";
-import Textile from "../product/textileProduct/textile";
+import Category from "../home/category";
+ 
+function CategoryPage({ cat}: { cat: "retail" | "textile" }) {
 
-function CategoryPage({ cat }: { cat: "retail" | "textile" }) {
-  switch (cat) {
-    case "retail":
-      return (
-        <div className="">
-          <Retails />
-        </div>
-      );
-    case "textile":
-      return (
-        <div className="">
-          <Textile />
-        </div>
-      );
-    default:
-      return null;
-  }
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <Category cat={cat} />
+    </div>
+  );
 }
 
 export default CategoryPage;

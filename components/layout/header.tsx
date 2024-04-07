@@ -23,9 +23,9 @@ import { DesktopNavigationMenu } from "./headerDesktopNav";
 
 const Header = async () => (
   <div className="border-b z-[500] bg-background">
-    <div className="flex h-16 items-center w-full md:px-6 px-2">
+    <div className="flex h-12 items-center w-full md:px-6 px-2">
       <Link href="/">
-        <div className="w-20">
+        <div className="w-16">
           <Image
             src={logo}
             alt="logo"
@@ -35,11 +35,11 @@ const Header = async () => (
           />
         </div>
       </Link>
-      <div className="w-full hidden md:block pl-20 justify-center items-center flex-row">
+      <div className="w-full hidden md:block pl-20 ">
         <DesktopNavigationMenu />
       </div>
       <div className="ml-auto flex items-center space-x-4">
-        <ComboboxDemo />
+        {/* <ComboboxDemo /> */}
         <ModeToggle />
         {(await currentUser()) ? (
           <>
