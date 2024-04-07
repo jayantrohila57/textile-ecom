@@ -8,43 +8,43 @@ import { Button } from "../ui/button";
 const data = [
   {
     id: 1,
-    name: "Man Formal Fabric",
-    title: "Textile fabrics",
+    name: "Man 3P Suit",
+    title: "Party Wear",
     image:
-      "https://img.freepik.com/free-photo/man-cutter-sewing-factory-holding-fabric_1303-15848.jpg?w=900",
-    price: "₹399",
-    rating: 4.3,
+      "https://plus.unsplash.com/premium_photo-1661328065408-c6738b9a66b1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    price: "₹1399",
+    rating: 5.0,
   },
   {
     id: 2,
-    name: "Man Coat Fabric",
-    title: "Fashion designer taking measurement ",
+    name: "Man 3P Suit",
+    title: "Party Wear",
     image:
-      "https://img.freepik.com/free-photo/fashion-designer-taking-measurement-blue-fabric-with-measuring-tape-table_23-2148180320.jpg?w=740",
+      "https://plus.unsplash.com/premium_photo-1664297814064-661d433c03d9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "₹499",
-    rating: 4.3,
+    rating: 4.6,
   },
   {
     id: 3,
-    name: "Man Textile Fabric",
-    title: "A man sits in front of a pile of fabric.",
+    name: "Man Blazer",
+    title: "Office Wear",
     image:
-      "https://img.freepik.com/premium-photo/man-sits-front-pile-fabric_664644-3529.jpg?w=900",
+      "https://plus.unsplash.com/premium_photo-1661326286990-fcf770fcb4a7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "₹519",
-    rating: 4.3,
+    rating: 4.0,
   },
   {
     id: 4,
-    name: "Man Printed Textiles",
-    title: "Portrait of people at the market",
+    name: "Man Shirt",
+    title: "Daily Wear",
     image:
-      "https://img.freepik.com/free-photo/portrait-people-market_23-2151205693.jpg?w=1060",
+      "https://images.unsplash.com/photo-1579038773867-044c48829161?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "₹529",
-    rating: 4.3,
+    rating: 3.3,
   },
 ];
 
-function HomeTextile() {
+function HomeCollection() {
   return (
     <div className="w-full flex flex-col justify-center items-center md:gap-14 gap-10 px-2 md:px-20 md:mt-10 mt-5 overflow-hidden ">
       <div className="w-full flex flex-col items-center justify-center gap-5">
@@ -53,7 +53,7 @@ function HomeTextile() {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          Men Textile Fabrics
+          Men Collection Styles
         </h2>
         <p
           className="text-center text-sm md:text-base"
@@ -90,7 +90,7 @@ function HomeTextile() {
 
               <LikeDislike />
 
-              <CardFooter className="w-full flex flex-col items-center justify-between p-0 pb-1 h-32">
+              <CardFooter className="w-full flex flex-col items-center justify-between p-0 pb-1">
                 <div className="w-full flex items-center justify-between p-1">
                   <div className="flex flex-col items-start justify-start">
                     <h3 className="font-bold text-gray-700  lg:text-lg">
@@ -120,4 +120,4 @@ function HomeTextile() {
   );
 }
 
-export default HomeTextile;
+export default HomeCollection;

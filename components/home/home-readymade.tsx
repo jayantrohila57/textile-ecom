@@ -9,7 +9,7 @@ const data = [
   {
     id: 1,
     name: "Man Trouser",
-    title: "Businessman carrying briefcase",
+    title: "Businessman wear formal pent",
     image:
       "https://img.freepik.com/premium-photo/businessman-carrying-briefcase_13339-60742.jpg?w=360",
     price: "₹399",
@@ -17,10 +17,10 @@ const data = [
   },
   {
     id: 2,
-    name: "Nam Trouser",
-    title: "Slim-cut formal men's",
+    name: "Man Shirt",
+    title: "Slim formal men's shirt",
     image:
-      "https://img.freepik.com/premium-photo/slim-cut-formal-men-s-suit-trousers-business-style_191555-6318.jpg?w=900",
+      "https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "₹499",
     rating: 4.3,
   },
@@ -35,10 +35,10 @@ const data = [
   },
   {
     id: 4,
-    name: "Man Trouser",
-    title: "Man in elegant dress",
+    name: "Man Shirt",
+    title: "Slim-cut formal men's shirt",
     image:
-      "https://img.freepik.com/premium-photo/man-elegant-dress-with-crossed-legs-hands-pockets-he-wears-white-shirt-plaid-pants-brown-shoes-isolated-white-background_384104-45.jpg?w=360",
+      "https://images.unsplash.com/photo-1535931737580-a99567967ddc?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "₹529",
     rating: 4.3,
   },
@@ -46,7 +46,7 @@ const data = [
 
 function HomeReadymade() {
   return (
-    <div className="w-full flex flex-col justify-center items-center md:gap-14 gap-10 px-2 md:px-20 md:mt-10 mt-5">
+    <div className="w-full flex flex-col justify-center items-center md:gap-14 gap-10 px-2 md:px-20 md:mt-10 mt-5 overflow-hidden ">
       <div className="w-full flex flex-col items-center justify-center gap-5">
         <h2
           className="md:text-4xl text-2xl  font-bold"

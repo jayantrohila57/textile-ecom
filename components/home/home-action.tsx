@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function HomeAction() {
   return (
-    <div className="relative w-full mx-auto flex flex-col items-center justify-center py-20 gap-5 px-3 md:px-10 mt-10 bg-gradient-to-r from-black/80 via-black/20 to-transparent">
+    <div className="relative w-full h-screen mx-auto flex flex-col items-center justify-center py-20 gap-5 px-3 md:px-10 mt-10 bg-gradient-to-r from-black/80 via-black/20 to-transparent overflow-hidden ">
       <Image
         src="https://img.freepik.com/premium-photo/young-handsome-businessman-traditional-clothes-shop_449849-19742.jpg?w=1060"
         alt="main image"
