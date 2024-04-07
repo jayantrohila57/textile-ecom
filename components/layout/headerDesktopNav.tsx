@@ -14,185 +14,60 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { currentUser } from "@/server/api-auth";
+import { ChevronRight } from "lucide-react";
+import { headerData } from "@/data";
 
-interface ICategory {
-  title: string;
-  link: string;
-  description: string;
-}
-interface ICategories {
-  title: string;
-  link: string;
-  categories: ICategory[];
-}
-interface IHeaderData {
-  title: string;
-  category: ICategories[];
-}
-
-const headerData: IHeaderData[] = [
-  {
-    title: "Men Fashion",
-    category: [
-      {
-        title: "Topwear",
-        link: "/topwear",
-        categories: [
-          {
-            title: "T-Shirts",
-            link: "/topwear/t-shirt",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Casual Shirts",
-            link: "/topwear/casual-shirts",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Formal Shirts",
-            link: "/topwear/formal-shirts",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Sweatshirts",
-            link: "/topwear/sweatshirts",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Sweaters",
-            link: "/topwear/sweaters",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Jackets",
-            link: "/topwear/jackets",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Blazers & Coats",
-            link: "/topwear/blazers-coats",
-            description: "A set of layered sections of content—known as tab.",
-          },
-        ],
-      },
-      {
-        title: "Bottomwear",
-        link: "/bottomwear",
-        categories: [
-          {
-            title: "Jeans",
-            link: "/bottomwear/jeans",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Casual Trousers",
-            link: "/bottomwear/casual-trousers",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Formal Trousers",
-            link: "/bottomwear/formal-trousers",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Shorts",
-            link: "/bottomwear/shorts",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Track Pants & Joggers",
-            link: "/bottomwear/track-pent-joggers",
-            description: "A set of layered sections of content—known as tab.",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Textiles",
-    category: [
-      {
-        title: "Topwear",
-        link: "/topwear",
-        categories: [
-          {
-            title: "Tabs1",
-            link: "/docs/primitives/tabs",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Tabs2",
-            link: "/docs/primitives/tabs",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Tabs3",
-            link: "/docs/primitives/tabs",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Tabs4",
-            link: "/docs/primitives/tabs",
-            description: "A set of layered sections of content—known as tab.",
-          },
-        ],
-      },
-      {
-        title: "Bottomwear",
-        link: "/bottomwear",
-        categories: [
-          {
-            title: "Tabs1",
-            link: "/docs/primitives/tabs",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Tabs2",
-            link: "/docs/primitives/tabs",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Tabs3",
-            link: "/docs/primitives/tabs",
-            description: "A set of layered sections of content—known as tab.",
-          },
-          {
-            title: "Tabs4",
-            link: "/docs/primitives/tabs",
-            description: "A set of layered sections of content—known as tab.",
-          },
-        ],
-      },
-    ],
-  },
-];
+ 
 
 export function DesktopNavigationMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {headerData.map((header) => (
-          <NavigationMenuItem key={header.title}>
+        {headerData.map(({ title, category }) => (
+          <NavigationMenuItem key={title}>
             {/* <Link href={header.category[0].link} passHref> */}
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <NavigationMenuTrigger>{header.title}</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-semibold ">
+                {title}
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {header.category.map((category) => (
-                    <h2 key={category.title}>{category.title}</h2>
+                <div className="grid gap-2 p-2 md:w-[800px] grid-cols-2  lg:w-[1000px]">
+                  {category.map(({ categories, link: l, title: t }) => (
+                    <div key={l + t} className="hover:bg-secondary p-2  flex flex-col justify-between rounded-lg">
+                      <div className="col-span-2 justify-between gap-5 flex flex-col">
+                        <div
+                          id="heading"
+                          className="h-full flex flex-col justify-between"
+                        >
+                        <div className="h-40 aspect-video w-full rounded-xl bg-gray-500"></div>
+                          <Link
+                            className="text-2xl capitalize w-full flex flex-row justify-between items-center font-semibold p-2"
+                            href={l}
+                          >
+                            {t}
+                            <ChevronRight className="w-6 h-6  inline" />
+                          </Link>
+                        </div>
+                        <ul className="grid grid-cols-2">
+                          {categories.map(
+                            ({ description, link: sl, title: st }) => (
+                              <ListItem
+                                key={st}
+                                title={st}
+                                className="w-60"
+                                href={sl}
+                              >
+                                <p className="text-xs truncate">
+                                  {description}...
+                                </p>
+                              </ListItem>
+                            )
+                          )}
+                        </ul>
+                      </div>
+                    </div>
                   ))}
-                  {header.category.map((category) =>
-                    category.categories.map((subcategory) => (
-                      <ListItem
-                        key={subcategory.title}
-                        title={subcategory.title}
-                        href={subcategory.link}
-                      >
-                        {subcategory.description}
-                      </ListItem>
-                    ))
-                  )}
-                </ul>
+                </div>
               </NavigationMenuContent>
             </NavigationMenuLink>
             {/* </Link> */}
