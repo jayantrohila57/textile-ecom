@@ -70,7 +70,7 @@ const CollectionItem: React.FC<CollectionProps> = ({
         <div className="absolute w-full -bottom-20 h-10 backdrop-blur md:p-8 p-5 flex flex-col items-center justify-center gap-10 group-hover:h-full transition-all duration-300">
           <div className="w-full flex items-center justify-between">
             <h2 className="text-4xl font-bold text-secondary">{title}</h2>
-            <MoveRight className="h-10 w-10 text-primary bg-secondary p-1 rounded-full" />
+            <MoveRight className="h-10 w-10 text-primary bg-secondary p-1 rounded-full group-hover:rotate-[360deg] transition-all duration-1000" />
           </div>
           <div className="w-full ">
             <p className="text-xl text-secondary text-start z-0">

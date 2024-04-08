@@ -42,6 +42,11 @@ const nextConfig = {
         hostname: "localhost",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "assets.myntassets.com",
+        port: "",
+      },
     ],
   },
 };

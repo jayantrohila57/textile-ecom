@@ -14,6 +14,7 @@ const data = [
       "https://plus.unsplash.com/premium_photo-1661328065408-c6738b9a66b1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "₹1399",
     rating: 5.0,
+    delay: "0",
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const data = [
       "https://plus.unsplash.com/premium_photo-1664297814064-661d433c03d9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "₹499",
     rating: 4.6,
+    delay: "400",
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const data = [
       "https://plus.unsplash.com/premium_photo-1661326286990-fcf770fcb4a7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "₹519",
     rating: 4.0,
+    delay: "800",
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ const data = [
       "https://images.unsplash.com/photo-1579038773867-044c48829161?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "₹529",
     rating: 3.3,
+    delay: "1200",
   },
 ];
 
@@ -65,55 +69,58 @@ function HomeCollection() {
       </div>
       <div className="w-full">
         <div className="grid gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
-          {data.map(({ id, image, name, price, title, rating }, index) => (
-            <Card
-              className="rounded-xl relative"
-              key={index + id}
-              data-aos="fade-right"
-              data-aos-duration="1000"
-            >
-              <CardHeader className="p-0 h-72">
-                <Link
-                  href="#"
-                  className="group relative block h-72 overflow-hidden rounded-xl bg-gray-100"
-                >
-                  <Image
-                    src={image}
-                    width={500}
-                    height={600}
-                    loading="lazy"
-                    alt={name}
-                    className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-                  />
-                </Link>
-              </CardHeader>
+          {data.map(
+            ({ id, image, name, price, title, rating, delay }, index) => (
+              <Card
+                className="rounded-xl relative"
+                key={index + id}
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+                data-aos-delay={delay}
+              >
+                <CardHeader className="p-0 h-72">
+                  <Link
+                    href="#"
+                    className="group relative block h-72 overflow-hidden rounded-xl bg-gray-100"
+                  >
+                    <Image
+                      src={image}
+                      width={500}
+                      height={600}
+                      loading="lazy"
+                      alt={name}
+                      className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                    />
+                  </Link>
+                </CardHeader>
 
-              <LikeDislike />
+                <LikeDislike />
 
-              <CardFooter className="w-full flex flex-col items-center justify-between p-0 pb-1">
-                <div className="w-full flex items-center justify-between p-1">
-                  <div className="flex flex-col items-start justify-start">
-                    <h3 className="font-bold text-gray-700  lg:text-lg">
-                      {name}
-                    </h3>
-                    <p className="text-gray-700 text-sm">{title}</p>
+                <CardFooter className="w-full flex flex-col items-center justify-between p-0 pb-1">
+                  <div className="w-full flex items-center justify-between p-1">
+                    <div className="flex flex-col items-start justify-start">
+                      <h3 className="font-bold text-gray-700  lg:text-lg">
+                        {name}
+                      </h3>
+                      <p className="text-gray-700 text-sm">{title}</p>
+                    </div>
+                    <div className="flex flex-col items-end justify-end gap-1">
+                      <span className="font-bold text-gray-700 lg:text-lg">
+                        {price}
+                      </span>
+                      <span className="font-bold text-gray-700 text-sm">
+                        ⭐{rating}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex flex-col items-end justify-end gap-1">
-                    <span className="font-bold text-gray-700 lg:text-lg">
-                      {price}
-                    </span>
-                    <span className="font-bold text-gray-700 text-sm">
-                      ⭐{rating}
-                    </span>
+                  <div className="w-full flex items-center justify-between p-1">
+                    <Button variant={"outline"}>Add to Cart</Button>
+                    <Button>But Now</Button>
                   </div>
-                </div>
-                <div className="w-full flex items-center justify-between p-1">
-                  <Button variant={"outline"}>Add to Cart</Button>
-                  <Button>But Now</Button>
-                </div>
-              </CardFooter>
-            </Card>
-          ))}
+                </CardFooter>
+              </Card>
+            )
+          )}
         </div>
       </div>
     </div>
