@@ -4,7 +4,7 @@ import logo from "@/assets/csssk.png";
 
 export default function FooterLayout() {
   return (
-    <footer className="px-2 md:px-6 py-10 md:pt-16 md:mt-10 mt-5 border-t-2">
+    <footer className="px-2 md:px-6 py-10 md:pt-16 md:mt-10 mt-5 border-t-2 LayoutBackground">
       <div className="mx-auto w-full ">
         <div className="mb-16 grid grid-cols-2 gap-12 md:grid-cols-4 lg:grid-cols-6 lg:gap-8">
           <div className="col-span-full lg:col-span-2">
@@ -22,7 +22,7 @@ export default function FooterLayout() {
               </Link>
             </div>
 
-            <p className="mb-6 text-gray-500 sm:pr-8">
+            <p className="mb-6 text-gray-200 sm:pr-8">
               Filler text is dummy text which has no meaning however looks very
               similar to real text
             </p>
@@ -107,7 +107,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Overview
                 </Link>
@@ -116,7 +116,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Solutions
                 </Link>
@@ -125,7 +125,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Pricing
                 </Link>
@@ -134,7 +134,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Customers
                 </Link>
@@ -151,7 +151,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   About
                 </Link>
@@ -160,7 +160,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Investor Relations
                 </Link>
@@ -169,7 +169,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Jobs
                 </Link>
@@ -178,7 +178,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Press
                 </Link>
@@ -187,7 +187,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Blog
                 </Link>
@@ -204,7 +204,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Contact
                 </Link>
@@ -213,7 +213,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Documentation
                 </Link>
@@ -222,7 +222,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Chat
                 </Link>
@@ -231,7 +231,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   FAQ
                 </Link>
@@ -248,7 +248,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Terms of Service
                 </Link>
@@ -257,7 +257,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-indprimary600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-indprimary600"
                 >
                   Privacy Policy
                 </Link>
@@ -266,7 +266,7 @@ export default function FooterLayout() {
               <div>
                 <Link
                   href=""
-                  className="text-gray-500 transition duration-100 hover:text-primary active:text-primary-600"
+                  className="text-gray-300 transition duration-100 hover:text-primary active:text-primary-600"
                 >
                   Cookie settings
                 </Link>
@@ -275,7 +275,7 @@ export default function FooterLayout() {
           </div>
         </div>
 
-        <div className="pt-8 text-center text-sm text-gray-400 border-t-2">
+        <div className="pt-8 text-center text-sm text-gray-300 border-t-2">
           © 2024 - Present CSK. All rights reserved.
         </div>
       </div>

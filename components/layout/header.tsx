@@ -22,8 +22,8 @@ import { ComboboxDemo } from "../common/popover-command";
 import { DesktopNavigationMenu } from "./headerDesktopNav";
 
 const Header = async () => (
-  <div className="border-b z-[500] bg-background">
-    <div className="flex h-12 items-center w-full md:px-6 px-2">
+  <div className="z-[500] LayoutBackground">
+    <div className="flex h-16 items-center w-full md:px-6 px-2">
       <Link href="/">
         <div className="w-16">
           <Image
