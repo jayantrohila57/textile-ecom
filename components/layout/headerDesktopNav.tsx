@@ -24,22 +24,25 @@ export function DesktopNavigationMenu() {
     <NavigationMenu>
       <NavigationMenuList>
         {headerData.map(({ title, category }) => (
-          <NavigationMenuItem key={title}>
+          <NavigationMenuItem className="bg-transparent" key={title}>
             {/* <Link href={header.category[0].link} passHref> */}
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <NavigationMenuTrigger className="font-semibold ">
+              <NavigationMenuTrigger className="font-semibold bg-transparent">
                 {title}
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid gap-2 p-2 md:w-[800px] grid-cols-2  lg:w-[1000px]">
                   {category.map(({ categories, link: l, title: t }) => (
-                    <div key={l + t} className="hover:bg-secondary p-2  flex flex-col justify-between rounded-lg">
+                    <div
+                      key={l + t}
+                      className="hover:bg-secondary p-2  flex flex-col justify-between rounded-lg"
+                    >
                       <div className="col-span-2 justify-between gap-5 flex flex-col">
                         <div
                           id="heading"
                           className="h-full flex flex-col justify-between"
                         >
-                        <div className="h-40 aspect-video w-full rounded-xl bg-gray-500"></div>
+                          <div className="h-40 aspect-video w-full rounded-xl bg-red-500"></div>
                           <Link
                             className="text-2xl capitalize w-full flex flex-row justify-between items-center font-semibold p-2"
                             href={l}

@@ -22,7 +22,7 @@ import { ComboboxDemo } from "../common/popover-command";
 import { DesktopNavigationMenu } from "./headerDesktopNav";
 
 const Header = async () => (
-  <div className="border-b z-[500] bg-background">
+  <div className="border-b z-[500] bg-background/20 backdrop-blur-xl">
     <div className="flex h-12 items-center w-full md:px-6 px-2">
       <Link href="/">
         <div className="w-16">
@@ -65,12 +65,12 @@ const Header = async () => (
         ) : (
           <>
             <Link href="/auth/sign-in">
-              <Button size={"sm"} className="group">
+              <Button size={"sm"} variant={"outline"} className="group">
                 Sign Up
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size={"sm"} className="group">
+              <Button size={"sm"} variant={"outline"} className="group">
                 Contact Us
               </Button>
             </Link>
